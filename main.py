@@ -9,7 +9,7 @@ ALLOWED_EXTENSIONS = {'pdf'}
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your-secret-key'  # replace with your secret key
-app.config['UPLOAD_FOLDER'] = 'user_uploads'
+app.config['UPLOAD_FOLDER'] = '../static/uploads'
 app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024  # 10MB
 
 class UploadFileForm(FlaskForm):

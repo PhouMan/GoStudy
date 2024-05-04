@@ -151,7 +151,7 @@ button:hover {
 
 @font-face {
     font-family: "MonumentExtended";
-    src: url(fonts/MONUMENTEXTENDED-REGULAR.OTF);
+    src: url(../MONUMENTEXTENDED-REGULAR.OTF);
   }
 
   .calendar-wrapper {
