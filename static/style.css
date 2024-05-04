@@ -57,3 +57,7 @@ body {
     width: 650px;
     height: 1200px;
 }
+
+form {
+    position: relative;
+}
