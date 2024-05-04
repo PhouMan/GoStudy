@@ -14,22 +14,18 @@
 <div id="title">
     <h2>GoStudy</h2>
 </div>
+<div id="rcorners1"></div>
+<div id="rcorners2"></div>
+
 <div>
     <button type="button" class="btn btn-primary"
             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
         Custom button
     </button>
 </div>
-<div id="upload">
-    <form action="fileupload.php" enctype="multipart/form-data" method="post">
-        <label class="custom-uploader" for="file">
-            Upload Your File</label>
-        <input id="file" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps"
-               name="fileToUpload" type="file"/>
-        <button
-                class="btn btn-success" name="submit" type="submit"> Upload File
-        </button>
-    </form>
+<div id="uploadButton">
+    <input type="file" id="upload" hidden/>
+    <label for="upload">Choose file</label>
 </div>
 <!--<div id="about"><p>Welcome to GoStudy, the free online wizard that makes scheduling a breeze! Just upload your course outlines,-->
 <!--    and we'll transform them into your semester's calendar. Less chaos, more chill-->
