@@ -146,3 +146,150 @@ button:hover {
 #logInButton:hover {
     background-color: #008CBA;
 }
+
+
+
+@font-face {
+    font-family: "MonumentExtended";
+    src: url(fonts/MONUMENTEXTENDED-REGULAR.OTF);
+  }
+
+  .calendar-wrapper {
+    position: fixed;
+    bottom: 85px; /* Leaves room for the upload bar */
+    right: 210px;
+    width: 30%;
+  }
+
+  .calendar-container {
+    position: absolute;
+    bottom: 30px; /* Start from bottom to open upwards */
+    border-radius: 8px;
+    background-color: #27395b;
+    color: #f5f5f5;
+    width: 400px;
+    height: 72px;
+    transition: height 0.5s ease;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .expandable-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    padding-left: 25%;
+    padding-right: 13px;
+    height: 72px;
+    border-radius: 8px;
+    background-color: #171f2d;
+    color: #f5f5f5;
+    font-family: "MonumentExtended";
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .settings-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: #27395b;
+    color: #f5f5f5;
+    cursor: pointer;
+  }
+
+  .upload-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 12px;
+    background-color: #171f2d;
+    color: #f5f5f5;
+    width: 60%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    left: 20%;
+    right: 0;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    z-index: 10;
+  }
+
+  .upload-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 8px;
+    background-color: #27395b;
+    color: #f5f5f5;
+    cursor: pointer;
+  }
+
+  .file-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    flex-grow: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .file-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #28334a;
+    color: #f5f5f5;
+    font-family: "MonumentExtended";
+    width: 180px;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .file-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  ion-icon {
+    font-size: 25px;
+  }
+
+  .initial-text {
+    position: absolute;
+    font-family: "MonumentExtended";
+    left: 7.5%;
+    color: #767676;
+    font-size: 14px;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+
+  .error-message {
+    position: fixed;
+    bottom: 120px; /* Position just above the upload bar */
+    left: 30%;
+    transform: translateX(-50%);
+    width: 60%;
+    text-align: center;
+    color: #ff4d4f;
+    font-size: 14px;
+    z-index: 20; /* Ensure it appears above other elements */
+  }

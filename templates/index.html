@@ -9,6 +9,12 @@
             crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6.0.3/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@6.0.3/dist/ionic/ionic.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@ionic/core@6.0.3/css/ionic.bundle.css" rel="stylesheet">
+
+    
     <meta charset="UTF-8">
     <title>Index</title>
 </head>
@@ -28,44 +34,133 @@
 </div>
 
 <div id="pythonIcon">
-    <img src="/GoStudy/icons/py.svg" alt="Python Icon"/>
+    <img src="../icons/py.svg" alt="Python Icon"/>
 </div>
 
 <div id="rcorners3"></div>
 <div id="jsIcon">
-    <img src="/GoStudy/icons/js.svg" alt="JavaScript Icon"/>
+    <img src="../icons/js.svg" alt="JavaScript Icon"/>
 </div>
 
 <div id="htmlIcon">
-    <img src="/GoStudy/icons/html.svg" alt="html Icon"/>
+    <img src="../icons/html.svg" alt="html Icon"/>
 </div>
 
 <div id="cssIcon">
-    <img src="/GoStudy/icons/CSS.svg" alt="css Icon"/>
+    <img src="../icons/CSS.svg" alt="css Icon"/>
 </div>
 
 <div id="vscIcon">
-    <img src="/GoStudy/icons/VS_Code.svg" alt="vsc Icon"/>
+    <img src="../icons/VS_Code.svg" alt="vsc Icon"/>
 </div>
 
 <div id="figmaIcon">
-    <img src="/GoStudy/icons/Figma.svg" alt="figma Icon"/>
+    <img src="../icons/Figma.svg" alt="figma Icon"/>
 </div>
 
 <div id="githubIcon">
-    <img src="/GoStudy/icons/Github.svg" alt="github Icon"/>
+    <img src="../icons/Github.svg" alt="github Icon"/>
 </div>
-    <div>
-        <button type="button" class="btn btn-primary"
-                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-            Custom button
-        </button>
-    </div>
+    
     <form method="POST" action="" enctype="multipart/form-data">
-        {{ form.hidden_tag() }}
-        {{ form.file.label }}: {{ form.file(multiple=True) }}
-        {{ form.submit() }}
+        <div class="upload-bar">
+            {{ form.hidden_tag() }}
+            <!-- Hidden file input field -->
+            {{ form.file(id="fileInput", class="d-none", multiple=True) }}
+
+            <!-- Icon for file upload -->
+            <div class="upload-icon" id="triggerUpload">
+                <ion-icon name="document-outline"></ion-icon>
+            </div>
+
+             <!-- File bar for uploaded files -->
+             <div id="fileBar" class="file-bar"></div>
+
+             <!-- Text in the bar that fades away -->
+             <div id="initialText" class="initial-text">Input Course Outlines</div>
+            
+            <!-- Hidden submit button -->
+            {{ form.submit(id="submitButton", class="d-none") }}
+
+            <!-- Icon for submitting the files -->
+            <div class="upload-icon" id="processFiles">
+                <ion-icon name="cloud-upload-outline"></ion-icon>
+            </div>
+
+        </div>
+        
     </form>
+
+    <script>
+        // Trigger the file input dialog when the icon is clicked
+        document.getElementById('triggerUpload').addEventListener('click', function () {
+            document.getElementById('fileInput').click();
+        });
+
+        // Submit the form when the icon is clicked
+        document.getElementById('processFiles').addEventListener('click', function () {
+            const fileBarContainer = document.getElementById('fileBar' );
+            const fileItems = fileBarContainer.children;
+            if (fileItems.length === 0) {
+                alert("No files to process.");
+            } else {
+                // Add logic to process the files here
+                alert(`Processing ${fileItems.length} files...`);
+            }
+
+            document.getElementById('submitButton').click();
+        });
+
+        // Add files to the upload bar when files are selected
+        document.getElementById('fileInput').addEventListener('change', function (event) {
+            const files = event.target.files;
+            const fileBarContainer = document.getElementById('fileBar');
+            const errorMessageContainer = document.getElementById('errorMessage');
+            const initialTextContainer = document.getElementById('initialText');
+            errorMessageContainer.textContent = ""; // Clear any existing error messages
+
+            for (const file of files) {
+                // Check if the file is a PDF
+                if (file.type === 'application/pdf') {
+                    // Create a new file item
+                    const fileItem = document.createElement('div');
+                    fileItem.className = 'file-item';
+
+                    // Add a file icon and details
+                    const fileIcon = document.createElement('img');
+                    fileIcon.src = 'PDF1.webp'; // Replace with your actual icon URL
+                    fileIcon.alt = 'File Icon';
+                    fileIcon.className = 'file-icon';
+
+                    const fileInfo = document.createElement('div');
+                    fileInfo.className = 'file-info';
+
+                    const fileName = document.createElement('span');
+                    fileName.textContent = file.name;
+
+                    fileInfo.appendChild(fileName);
+                    fileItem.appendChild(fileIcon);
+                    fileItem.appendChild(fileInfo);
+
+                    // Add the new file item to the file bar container
+                    fileBarContainer.appendChild(fileItem);
+                } else {
+                    // Show error message for non-PDF files
+                    errorMessageContainer.textContent = "Only PDF files are allowed. Please remove any non-PDF files.";
+                }
+            }
+
+            // Fade out the initial text after files are uploaded
+            if (files.length > 0) {
+                initialTextContainer.style.opacity = 0;
+            }
+        });
+    </script>
+
+
+
+
+    
 <!--<div id="about"><p>Welcome to GoStudy, the free online wizard that makes scheduling a breeze! Just upload your course outlines,-->
 <!--    and we'll transform them into your semester's calendar. Less chaos, more chill-->
 <!--    – you'll be ready to tackle the semester like a pro</p></div>-->
