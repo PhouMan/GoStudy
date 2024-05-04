@@ -5,3 +5,9 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
+
+h2 {
+    color: white;
+    font-family: Impact, Charcoal, sans-serif;
+    font-weight: bold;
+}
