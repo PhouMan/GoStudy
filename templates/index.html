@@ -63,6 +63,24 @@
 </div>
     
     <form method="POST" action="" enctype="multipart/form-data">
+
+        <div class="calendar-wrapper">
+            <!-- Calendar Container -->
+            <div id="calendarContainer" class="calendar-container">
+              <div class="expandable-bar" id="toggleBar">
+                <span>Calendar Setup</span>
+                <!-- Settings icon with a box around it -->
+                <div class="settings-icon-box">
+                  <ion-icon name="settings-outline"></ion-icon>
+                </div>
+              </div>
+              <!-- Additional content for expanded calendar settings -->
+            </div>
+        </div>
+
+        <!-- Error message container -->
+        <div id="errorMessage" class="error-message"></div>
+
         <div class="upload-bar">
             {{ form.hidden_tag() }}
             <!-- Hidden file input field -->
@@ -128,7 +146,7 @@
 
                     // Add a file icon and details
                     const fileIcon = document.createElement('img');
-                    fileIcon.src = 'PDF1.webp'; // Replace with your actual icon URL
+                    fileIcon.src = '../static/PDF.webp'; // Replace with your actual icon URL
                     fileIcon.alt = 'File Icon';
                     fileIcon.className = 'file-icon';
 
@@ -154,6 +172,12 @@
             if (files.length > 0) {
                 initialTextContainer.style.opacity = 0;
             }
+        });
+
+        document.getElementById("toggleBar").addEventListener("click", function () {
+            const container = document.getElementById("calendarContainer");
+            const isExpanded = container.style.height !== "72px";
+            container.style.height = isExpanded ? "72px" : "380px"; // Adjust final height as needed
         });
     </script>
 

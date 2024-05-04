@@ -1,166 +1,157 @@
 @font-face {
-    font-family: 'MyFont';
-    src:
-        url('MONUMENTEXTENDED-REGULAR.OTF')
-        format('opentype');
-}
-
-body {
-    background-color: #1B2841 !important;
+    font-family: "MonumentExtended";
+    src: url('../static/Font/MONUMENTEXTENDED-REGULAR.OTF');
+  }
+  
+  body {
+    background-color: #1b2841 !important;
     overflow: hidden;
-}
-
-#title {
+  }
+  
+  #title {
     position: absolute;
     left: 40px;
     top: 18px;
     color: white;
-    font-family: MyFont;
+    font-family: "MonumentExtended";
     text-shadow: 1px 1px 2px black;
     font-weight: bold;
-}
-
-#about {
+  }
+  
+  #about {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-family: MyFont;
-}
-
-#uploadButton {
+    font-family: "MonumentExtended";
+  }
+  
+  #uploadButton {
     position: absolute;
     top: 90%;
     left: 20%;
     color: white;
-}
-
-#rcorners1 {
+  }
+  
+  #rcorners1 {
     border-radius: 25px;
     transform: rotate(250deg);
-    background: #27395B;
+    background: #27395b;
     position: absolute;
     right: 1250px;
     top: 600px;
     width: 650px;
     height: 400px;
-}
-
-#rcorners2 {
+  }
+  
+  #rcorners2 {
     border-radius: 25px;
     transform: rotate(300deg);
-    background: #27395B;
+    background: #27395b;
     position: absolute;
     right: -200px;
     top: -300px;
     width: 650px;
     height: 1200px;
-}
-
-#rcorners3 {
+  }
+  
+  #rcorners3 {
     position: absolute;
     background: yellow;
     width: 48px;
     height: 48px;
     bottom: 16px;
     right: 16px;
-}
-
-#pythonIcon {
+  }
+  
+  #pythonIcon {
     position: absolute;
     right: 16px;
     bottom: 208px;
-}
-
-#jsIcon {
+  }
+  
+  #jsIcon {
     position: absolute;
     right: 18px;
     bottom: 17px;
-}
-
-#htmlIcon{
+  }
+  
+  #htmlIcon {
     position: absolute;
     right: 16px;
     bottom: 80px;
-}
-
-#cssIcon {
+  }
+  
+  #cssIcon {
     position: absolute;
     right: 16px;
     bottom: 144px;
-}
-
-#vscIcon {
+  }
+  
+  #vscIcon {
     position: absolute;
     right: 20px;
     bottom: 272px;
-}
-
-#figmaIcon {
+  }
+  
+  #figmaIcon {
     position: absolute;
     right: 16px;
     bottom: 336px;
-}
-
-#githubIcon {
+  }
+  
+  #githubIcon {
     position: absolute;
     right: 16px;
     bottom: 400px;
-}
-
-button:hover {
-    background-color: #008CBA; /* change to your desired color */
+  }
+  
+  button:hover {
+    background-color: #008cba; /* change to your desired color */
     color: white; /* change to your desired color */
-}
-#signInButton {
-    font-family: MyFont;
+  }
+  #signInButton {
+    font-family: "MonumentExtended";
     border-radius: 8px;
     color: white;
-    background-color: #171F2D;
+    background-color: #171f2d;
     border: none;
     padding: 5px;
     position: relative;
     width: 200px;
     margin-left: 1300px;
     margin-top: 25px;
-}
-
-#signInButton:hover {
-    background-color: #008CBA;
-}
-
-#logInButton {
-    font-family: MyFont;
+  }
+  
+  #signInButton:hover {
+    background-color: #008cba;
+  }
+  
+  #logInButton {
+    font-family: "MonumentExtended";
     border-radius: 8px;
     color: white;
-    background-color: #171F2D;
+    background-color: #171f2d;
     border: none;
     padding: 5px;
     position: absolute;
     width: 200px;
     margin-left: 1000px;
     margin-top: -34px;
-}
-
-#logInButton:hover {
-    background-color: #008CBA;
-}
-
-
-
-@font-face {
-    font-family: "MonumentExtended";
-    src: url(../MONUMENTEXTENDED-REGULAR.OTF);
   }
-
+  
+  #logInButton:hover {
+    background-color: #008cba;
+  }
+  
   .calendar-wrapper {
     position: fixed;
     bottom: 85px; /* Leaves room for the upload bar */
     right: 210px;
     width: 30%;
   }
-
+  
   .calendar-container {
     position: absolute;
     bottom: 30px; /* Start from bottom to open upwards */
@@ -173,7 +164,7 @@ button:hover {
     overflow: hidden;
     z-index: 1;
   }
-
+  
   .expandable-bar {
     display: flex;
     align-items: center;
@@ -189,7 +180,7 @@ button:hover {
     font-size: 16px;
     cursor: pointer;
   }
-
+  
   .settings-icon-box {
     display: flex;
     align-items: center;
@@ -201,7 +192,7 @@ button:hover {
     color: #f5f5f5;
     cursor: pointer;
   }
-
+  
   .upload-bar {
     display: flex;
     align-items: center;
@@ -222,7 +213,7 @@ button:hover {
     white-space: nowrap;
     z-index: 10;
   }
-
+  
   .upload-icon {
     display: flex;
     align-items: center;
@@ -236,7 +227,7 @@ button:hover {
     color: #f5f5f5;
     cursor: pointer;
   }
-
+  
   .file-bar {
     display: flex;
     flex-direction: row;
@@ -246,7 +237,7 @@ button:hover {
     overflow-x: auto;
     white-space: nowrap;
   }
-
+  
   .file-item {
     display: flex;
     align-items: center;
@@ -261,17 +252,17 @@ button:hover {
     white-space: nowrap;
     overflow: hidden;
   }
-
+  
   .file-icon {
     width: 20px;
     height: 20px;
     margin-right: 10px;
   }
-
+  
   ion-icon {
     font-size: 25px;
   }
-
+  
   .initial-text {
     position: absolute;
     font-family: "MonumentExtended";
@@ -281,7 +272,7 @@ button:hover {
     opacity: 1;
     transition: opacity 0.5s ease-out;
   }
-
+  
   .error-message {
     position: fixed;
     bottom: 120px; /* Position just above the upload bar */
@@ -293,3 +284,4 @@ button:hover {
     font-size: 14px;
     z-index: 20; /* Ensure it appears above other elements */
   }
+  
