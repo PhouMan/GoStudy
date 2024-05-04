@@ -5,12 +5,9 @@
         format('opentype');
 }
 
-body{
-    background: url('../static/background.png');
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+body {
+    background-color: #1B2841 !important;
+    overflow: hidden;
 }
 
 #title {
@@ -32,10 +29,31 @@ body{
     font-family: MyFont;
 }
 
-#upload {
+#uploadButton {
     position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 90%;
+    left: 20%;
     color: white;
+}
+
+#rcorners1 {
+    border-radius: 25px;
+    transform: rotate(250deg);
+    background: #27395B;
+    position: absolute;
+    right: 1250px;
+    top: 600px;
+    width: 650px;
+    height: 400px;
+}
+
+#rcorners2 {
+    border-radius: 25px;
+    transform: rotate(300deg);
+    background: #27395B;
+    position: absolute;
+    right: -200px;
+    top: -300px;
+    width: 650px;
+    height: 1200px;
 }
