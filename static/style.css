@@ -58,6 +58,91 @@ body {
     height: 1200px;
 }
 
-form {
+#rcorners3 {
+    position: absolute;
+    background: yellow;
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
+}
+
+#pythonIcon {
+    position: absolute;
+    right: 16px;
+    bottom: 208px;
+}
+
+#jsIcon {
+    position: absolute;
+    right: 18px;
+    bottom: 17px;
+}
+
+#htmlIcon{
+    position: absolute;
+    right: 16px;
+    bottom: 80px;
+}
+
+#cssIcon {
+    position: absolute;
+    right: 16px;
+    bottom: 144px;
+}
+
+#vscIcon {
+    position: absolute;
+    right: 20px;
+    bottom: 272px;
+}
+
+#figmaIcon {
+    position: absolute;
+    right: 16px;
+    bottom: 336px;
+}
+
+#githubIcon {
+    position: absolute;
+    right: 16px;
+    bottom: 400px;
+}
+
+button:hover {
+    background-color: #008CBA; /* change to your desired color */
+    color: white; /* change to your desired color */
+}
+#signInButton {
+    font-family: MyFont;
+    border-radius: 8px;
+    color: white;
+    background-color: #171F2D;
+    border: none;
+    padding: 5px;
     position: relative;
+    width: 200px;
+    margin-left: 1300px;
+    margin-top: 25px;
+}
+
+#signInButton:hover {
+    background-color: #008CBA;
+}
+
+#logInButton {
+    font-family: MyFont;
+    border-radius: 8px;
+    color: white;
+    background-color: #171F2D;
+    border: none;
+    padding: 5px;
+    position: absolute;
+    width: 200px;
+    margin-left: 1000px;
+    margin-top: -34px;
+}
+
+#logInButton:hover {
+    background-color: #008CBA;
 }
