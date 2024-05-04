@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'MyFont';
+    src:
+        url('MONUMENTEXTENDED-REGULAR.OTF')
+        format('opentype');
+}
+
 body{
     background: url('../static/background.png');
     background-position:center;
@@ -6,8 +13,29 @@ body{
     background-attachment: fixed;
 }
 
-h2 {
+#title {
+    position: absolute;
+    left: 40px;
+    top: 18px;
     color: white;
-    font-family: Impact, Charcoal, sans-serif;
+    font-family: MyFont;
+    text-shadow: 1px 1px 2px black;
     font-weight: bold;
+}
+
+#about {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: MyFont;
+}
+
+#upload {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }
