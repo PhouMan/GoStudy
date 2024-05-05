@@ -119,7 +119,7 @@
     border: none;
     padding: 5px;
     position: relative;
-    width: 200px;
+    width: 220px;
     margin-left: 1300px;
     margin-top: 25px;
   }
@@ -136,9 +136,9 @@
     border: none;
     padding: 5px;
     position: absolute;
-    width: 200px;
-    margin-left: 1000px;
-    margin-top: -34px;
+    width: 220px;
+    margin-left: 1060px;
+    margin-top: -26px;
   }
   
   #logInButton:hover {
@@ -148,7 +148,7 @@
   .calendar-wrapper {
     position: fixed;
     bottom: 85px; /* Leaves room for the upload bar */
-    right: 210px;
+    right: 247px;
     width: 30%;
   }
   
@@ -171,7 +171,7 @@
     justify-content: space-between;
     padding: 10px;
     padding-left: 25%;
-    padding-right: 13px;
+    padding-right: 16px;
     height: 72px;
     border-radius: 8px;
     background-color: #171f2d;
@@ -185,8 +185,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 8px;
     background-color: #27395b;
     color: #f5f5f5;
@@ -246,7 +246,7 @@
     background-color: #28334a;
     color: #f5f5f5;
     font-family: "MonumentExtended";
-    width: 180px;
+    width: 140px;
     font-size: 14px;
     text-align: center;
     white-space: nowrap;
@@ -266,7 +266,7 @@
   .initial-text {
     position: absolute;
     font-family: "MonumentExtended";
-    left: 7.5%;
+    left: 10%;
     color: #767676;
     font-size: 14px;
     opacity: 1;
@@ -276,7 +276,7 @@
   .error-message {
     position: fixed;
     bottom: 120px; /* Position just above the upload bar */
-    left: 30%;
+    left: 33%;
     transform: translateX(-50%);
     width: 60%;
     text-align: center;
