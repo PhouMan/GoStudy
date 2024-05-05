@@ -77,7 +77,7 @@ for name in os.listdir(save_path):
     if name != ".gitkeep":
       with open(os.path.join(save_path, name)) as f:
         text = f.read()
-        prompt = "give me the weighting and exact dates of all the assignements, tests or marked work in a python dictionary named after the course code in the syllabus file format with the coloumns Assignment,weight,date in YYYY-MM-DD: " + text
+        prompt = "give me the weighting and exact dates of all the assignements, tests or marked work in a python dictionary named after the course code in the syllabus file format with the coloumns ASSIGNMENT, WEIGHT, DATE in YYYY-MM-DD: " + text
         convo.send_message(prompt)
         base_name, _ = os.path.splitext(name)  # Extract base name without .txt extension
         completePath = os.path.join(csvpath,base_name+'.csv')
