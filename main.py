@@ -4,6 +4,7 @@ from flask_wtf.file import FileField, FileRequired, FileAllowed
 from wtforms import SubmitField
 from werkzeug.utils import secure_filename
 import os
+import subprocess
 
 ALLOWED_EXTENSIONS = {'pdf'}
 
@@ -24,7 +25,10 @@ def index():
             if uploaded_file.filename != '':
                 filename = secure_filename(uploaded_file.filename)
                 uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect(url_for('index'))
+        # Run bot.py after file upload
+        subprocess.run(["python3", "bot.py"], check=True)
+        subprocess.run(["python3", "poo.py"], check=True)        
+        return render_template("index.html", form=form)
     return render_template("index.html", form=form)
 
 if __name__ == "__main__":

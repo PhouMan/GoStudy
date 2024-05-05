@@ -7,7 +7,7 @@ apikey = "AIzaSyBafK1eejfSBd_E4C9y3mY19V_3BBwDXOo"
 
 #file paths for folder directory and new folder directory
 directory = r"user_uploads"
-save_path =  r"textfiles/uploadintotext"
+save_path =  r"textfiles"
 
 #runs through every file in a directory
 for name in os.listdir(directory):
@@ -68,7 +68,7 @@ model = genai.GenerativeModel(model_name="gemini-1.5-pro-latest",
 convo = model.start_chat(history=[
 ])
 
-csvpath = 'textfiles/csvfiles'
+csvpath = 'csvfiles'
 
 #go through all the files in the folder and read them and put the syllabus into gemini ai
 #gemini ai api response is requested to be returned as a csv 
@@ -77,11 +77,12 @@ for name in os.listdir(save_path):
     if name != ".gitkeep":
       with open(os.path.join(save_path, name)) as f:
         text = f.read()
-        prompt = "give me the weighting and exact dates of all the assignements, tests or marked work in a python dictionary named after the course code in the syllabus file format with the coloumns Assignment,weight,date: " + text
+        prompt = "give me the weighting and exact dates of all the assignements, tests or marked work in a python dictionary named after the course code in the syllabus file format with the coloumns Assignment,weight,date in YYYY-MM-DD: " + text
         convo.send_message(prompt)
         base_name, _ = os.path.splitext(name)  # Extract base name without .txt extension
         completePath = os.path.join(csvpath,base_name+'.csv')
         file = open(completePath,"w")
         file.write(convo.last.text)
         file.close()
+
 
