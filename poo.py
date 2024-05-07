@@ -74,12 +74,12 @@ def main():
                     data = json.loads(isolate_data(fileread))       
 
                     count = 0
-                    for i in data["Assignment"]:
+                    for i in data["ASSIGNMENT"]:
                         try:
-                            if validDate(data["Date"][count]) == False:
+                            if validDate(data["DATE"][count]) == False:
                                 count +=1
                             else:
-                                addEvent(creds,i,data["Date"][count],data["Date"][count])
+                                addEvent(creds,i,data["DATE"][count],data["DATE"][count])
                                 count +=1
                         except IndexError:
                             pass
