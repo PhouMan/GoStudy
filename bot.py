@@ -3,7 +3,7 @@ from PyPDF2 import PdfReader
 import os
 import os.path
 
-apikey = "AIzaSyBafK1eejfSBd_E4C9y3mY19V_3BBwDXOo"
+apikey = secret_file
 
 #file paths for folder directory and new folder directory
 directory = r"user_uploads"
